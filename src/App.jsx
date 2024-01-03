@@ -1,5 +1,5 @@
 
-import '../src/index.css';
+import './index.css';
 
 import React from 'react';
 import About from './components/pages/about.jsx';

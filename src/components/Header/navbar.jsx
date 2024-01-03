@@ -7,7 +7,7 @@ import { FaUserGear } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { Link } from 'react-router-dom';
 
-import '../../../src/index.css';
+import '../../index.css';
 
 function Nav() {
 
