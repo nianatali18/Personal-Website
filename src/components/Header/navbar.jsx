@@ -1,19 +1,20 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaFolder } from "react-icons/fa";
+import { FaFolder, FaHome } from "react-icons/fa";
 import { IoPersonSharp } from "react-icons/io5";
 import { FaUserGear } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
-
+import { NavLink } from "react-router-dom";
 import "../../index.css";
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+
   function scrollToElement(id) {
-   document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
- }
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+  }
   return (
     <motion.div
       initial={{ opacity: 0, y: -50 }}
@@ -69,20 +70,45 @@ function Nav() {
                 </div>
               </div>
               <div className="hidden sm:block sm:ml-6">
-              <div className="flex space-x-4 text-white text-xl">
-      <a onClick={() => scrollToElement('About')} className="flex items-center hover:bg-gray-700 hover:text-white px-3 py-2 gap-2  rounded-md font-medium">
-        <IoPersonSharp/>
-        <span>About</span>
-      </a>
-      <a onClick={() => scrollToElement('projects')} className="flex items-center hover:bg-gray-700 hover:text-white px-3 py-2 gap-2  rounded-md font-medium">
-        <FaFolder/>
-        <span>Projects</span>
-      </a>
-      <a onClick={() => scrollToElement('contact')} className="flex items-center hover:bg-gray-700 hover:text-white px-3 py-2  gap-2 rounded-md font-medium">
-        <MdEmail/>
-        <span>Contact</span>
-      </a>
-    </div>
+                <div className="flex space-x-4 text-white text-xl">
+                  <NavLink
+                    to="/"
+                    className="flex items-center hover:bg-gray-700 hover:text-white px-3 py-2 gap-2  rounded-md font-medium"
+                    activeClassName="active"
+                    isActive={() => true}
+                    onClick={() => scrollToElement("Home")}
+                  >
+                    <FaHome />
+                    <span>Home</span>
+                  </NavLink>
+                  <NavLink
+                    to="/about"
+                    className="flex items-center hover:bg-gray-700 hover:text-white px-3 py-2 gap-2  rounded-md font-medium"
+                    activeClassName="active"
+                    onClick={() => scrollToElement("About")}
+                  >
+                    <IoPersonSharp />
+                    <span>About</span>
+                  </NavLink>
+                  <NavLink
+                    to="/projects"
+                    className="flex items-center hover:bg-gray-700 hover:text-white px-3 py-2 gap-2  rounded-md font-medium"
+                    activeClassName="active"
+                    onClick={() => scrollToElement("projects")}
+                  >
+                    <FaFolder />
+                    <span>Projects</span>
+                  </NavLink>
+                  <NavLink
+                    to="/contact"
+                    className="flex items-center hover:bg-gray-700 hover:text-white px-3 py-2  gap-2 rounded-md font-medium"
+                    activeClassName="active"
+                    onClick={() => scrollToElement("contact")}
+                  >
+                    <MdEmail />
+                    <span>Contact</span>
+                  </NavLink>
+                </div>
               </div>
             </div>
           </div>

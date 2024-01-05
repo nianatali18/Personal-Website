@@ -2,7 +2,7 @@ import '../../index.css'
 
 function About() {
     return (
-        <section id="About" className="relative z-20 w-full h-screem mt-screen">
+        <section id="About"  className="relative z-20 w-full h-screem mt-screen">
         <div className="flex justify-center">
           <p className="lg:text-[5pc] text-[4pc] font-bold  text-white mt-[5rem]">About Me</p>
         </div>

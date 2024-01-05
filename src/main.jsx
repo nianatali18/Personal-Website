@@ -4,8 +4,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import App from './App.jsx';
 import About from './components/pages/about.jsx';
-import Projects from './components/Projects/projects.jsx';
+// import Projects from './components/Projects/projects.jsx';
 import Contact from './components/pages/contact.jsx';
+import Home from './components/Home/home.jsx';
 
 const root = document.getElementById('root');
 createRoot(root).render(
@@ -13,9 +14,9 @@ createRoot(root).render(
     <Router>
       <App>
         <Routes>
-          <Route path="/" element={<About />} />
+          <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
+          
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </App>
