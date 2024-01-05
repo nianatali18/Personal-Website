@@ -4,7 +4,7 @@ import { FaGithub } from "react-icons/fa";
 
 export default function Projects() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-3 pb-[10rem] ">
+    <div id="projects" className="flex flex-col items-center justify-center min-h-screen py-3 pb-[10rem] ">
       <h1 className="text-4xl font-bold text-white mb-[12rem]">Projects</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 w-full max-w-6xl mt-[-5rem] ">
       {projects.map((project) => (
