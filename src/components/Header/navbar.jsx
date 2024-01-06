@@ -11,10 +11,9 @@ import "../../index.css";
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("");
 
-  function scrollToElement(id) {
-    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
-  }
+ 
   return (
     <motion.div
       initial={{ opacity: 0, y: -50 }}
@@ -71,43 +70,66 @@ function Nav() {
               </div>
               <div className="hidden sm:block sm:ml-6">
                 <div className="flex space-x-4 text-white text-xl">
-                  <NavLink
-                    to="/"
-                    className="flex items-center hover:bg-gray-700 hover:text-white px-3 py-2 gap-2  rounded-md font-medium"
-                    activeClassName="active"
-                    isActive={() => true}
-                    onClick={() => scrollToElement("Home")}
-                  >
-                    <FaHome />
-                    <span>Home</span>
-                  </NavLink>
-                  <NavLink
+                <Link
                     to="/about"
-                    className="flex items-center hover:bg-gray-700 hover:text-white px-3 py-2 gap-2  rounded-md font-medium"
-                    activeClassName="active"
-                    onClick={() => scrollToElement("About")}
+                    className={`flex items-center hover:bg-gray-700 hover:text-white px-3 py-2 gap-2 rounded-md font-medium ${
+                      activeLink === "/home" ? "active" : ""
+                    }`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setActiveLink("/home");
+                      document
+                        .getElementById("home")
+                        .scrollIntoView({ behavior: "smooth" });
+                    }}
                   >
-                    <IoPersonSharp />
-                    <span>About</span>
-                  </NavLink>
-                  <NavLink
+                    Home
+                  </Link>
+                  <Link
+                    to="/about"
+                    className={`flex items-center hover:bg-gray-700 hover:text-white px-3 py-2 gap-2 rounded-md font-medium ${
+                      activeLink === "/about" ? "active" : ""
+                    }`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setActiveLink("/about");
+                      document
+                        .getElementById("about")
+                        .scrollIntoView({ behavior: "smooth" });
+                    }}
+                  >
+                    About
+                  </Link>
+                  <Link
                     to="/projects"
-                    className="flex items-center hover:bg-gray-700 hover:text-white px-3 py-2 gap-2  rounded-md font-medium"
-                    activeClassName="active"
-                    onClick={() => scrollToElement("projects")}
+                    className={`flex items-center hover:bg-gray-700 hover:text-white px-3 py-2 gap-2 rounded-md font-medium ${
+                      activeLink === "/projects" ? "active" : ""
+                    }`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setActiveLink("/projects");
+                      document
+                        .getElementById("projects")
+                        .scrollIntoView({ behavior: "smooth" });
+                    }}
                   >
-                    <FaFolder />
-                    <span>Projects</span>
-                  </NavLink>
-                  <NavLink
+                    Projects
+                  </Link>
+                  <Link
                     to="/contact"
-                    className="flex items-center hover:bg-gray-700 hover:text-white px-3 py-2  gap-2 rounded-md font-medium"
-                    activeClassName="active"
-                    onClick={() => scrollToElement("contact")}
+                    className={`flex items-center hover:bg-gray-700 hover:text-white px-3 py-2 gap-2 rounded-md font-medium ${
+                      activeLink === "/contact" ? "active" : ""
+                    }`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setActiveLink("/contact");
+                      document
+                        .getElementById("contact")
+                        .scrollIntoView({ behavior: "smooth" });
+                    }}
                   >
-                    <MdEmail />
-                    <span>Contact</span>
-                  </NavLink>
+                    Contact
+                  </Link>
                 </div>
               </div>
             </div>
