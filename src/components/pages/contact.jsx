@@ -39,7 +39,7 @@ const serviceID = import.meta.env.VITE_EMAILJS_SERVICEID;
 
   return (
     <div
-    id="Contact"
+    id="contact"
     className="flex flex-col items-center justify-center min-h-screen bg-opacity-50 text-white py-3"
   >
     <h1 className="text-3xl font-bold mb-8">Contact me</h1>

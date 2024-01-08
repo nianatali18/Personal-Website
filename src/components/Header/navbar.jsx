@@ -6,7 +6,6 @@ import { IoPersonSharp } from "react-icons/io5";
 import { FaUserGear } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { NavLink } from "react-router-dom";
 import "../../index.css";
 
 function Nav() {
@@ -83,6 +82,7 @@ function Nav() {
                         .scrollIntoView({ behavior: "smooth" });
                     }}
                   >
+                    <FaHome /> 
                     Home
                   </Link>
                   <Link
@@ -98,6 +98,7 @@ function Nav() {
                         .scrollIntoView({ behavior: "smooth" });
                     }}
                   >
+                     <IoPersonSharp />
                     About
                   </Link>
                   <Link
@@ -113,6 +114,7 @@ function Nav() {
                         .scrollIntoView({ behavior: "smooth" });
                     }}
                   >
+                     <FaFolder />
                     Projects
                   </Link>
                   <Link
@@ -128,6 +130,7 @@ function Nav() {
                         .scrollIntoView({ behavior: "smooth" });
                     }}
                   >
+                     <MdEmail />
                     Contact
                   </Link>
                 </div>
@@ -142,28 +145,28 @@ function Nav() {
         >
           <Link
             to="/Home"
-            className=" hover:bg-blue-800 hover:text-black px-3 py-2 rounded-md text-md font-medium flex items-center gap-2"
+            className=" hover:bg-pink-300 hover:text-black px-3 py-2 rounded-md text-md font-medium flex items-center gap-2"
           >
             <FaUserGear />
             Home
           </Link>
           <Link
             to="/About"
-            className=" hover:bg-blue-800 hover:text-black px-3 py-2 rounded-md text-md font-medium flex items-center gap-2"
+            className=" hover:bg-pink-300 hover:text-black px-3 py-2 rounded-md text-md font-medium flex items-center gap-2"
           >
             <IoPersonSharp />
             About
           </Link>
           <Link
             to="/projects"
-            className=" hover:bg-blue-800 hover:text-black px-3 py-2 rounded-md text-md font-medium flex items-center gap-2"
+            className=" hover:bg-pink-300 hover:text-black px-3 py-2 rounded-md text-md font-medium flex items-center gap-2"
           >
             <FaFolder />
             Projects
           </Link>
           <Link
             to="/contact"
-            className=" hover:bg-blue-800 hover:text-black px-3 py-2 rounded-md text-md font-medium flex items-center gap-2"
+            className=" hover:bg-pink-300 hover:text-black px-3 py-2 rounded-md text-md font-medium flex items-center gap-2"
           >
             <MdEmail />
             Contact
